@@ -23,6 +23,9 @@ The activity bar on the left, the Explorer toolbar, and the close button in the 
 | Notifications | Bell, unread bell, Do Not Disturb |
 | Status | Verified, warning, error, info, passed, check |
 | Actions | Close, clear, delete, settings, search, add, more, refresh, filter, new file, new folder, collapse, expand, copy, edit, pin, open external, show, hide, lock, Git branch, split editor |
+| Debug toolbar | Start, continue, pause, stop, disconnect, restart, step over, step into, step out, step back, reverse continue, run |
+| Panel and terminal | Terminal, new terminal, kill terminal, rename, profiles, Output, Problems, Debug Console, Ports, maximize, restore, close |
+| Source Control | Discard, unstage, open file, commit, fetch, pull, push, sync, stash, pull request, compare changes, tree and list view |
 
 Anything not listed keeps the default VS Code icon.
 
@@ -55,23 +58,15 @@ cd plume-icons
 bun install
 ```
 
-**3. Build the extension package**
+**3. Install it into VS Code**
 
 ```bash
-bun run package
+bun run install:vscode
 ```
 
-This creates `plume-icons-0.0.1.vsix` in the project folder.
+This builds the icon font, packs it into a temporary `.vsix` file, installs it into VS Code, and deletes the temporary file. Nothing is left in the project folder.
 
-**4. Install it into VS Code**
-
-```bash
-code --install-extension plume-icons-0.0.1.vsix
-```
-
-You can delete the `.vsix` file afterwards.
-
-**5. Turn it on**
+**4. Turn it on**
 
 In VS Code, open the Command Palette (`Cmd+Shift+P`), run **Preferences: Product Icon Theme**, and choose **Plume**.
 
@@ -83,13 +78,12 @@ Or add this line to your `settings.json`:
 
 ## Update
 
-Pull the latest changes, then build and install again. The `--force` flag replaces the installed copy.
+Pull the latest changes, then build and install again. The install replaces the copy that is already in VS Code.
 
 ```bash
 git pull
 bun install
-bun run package
-code --install-extension plume-icons-0.0.1.vsix --force
+bun run install:vscode
 ```
 
 Then run **Developer: Reload Window** from the Command Palette.
@@ -113,6 +107,9 @@ Icons are mapped in `src/icons/`, one file per area of the interface:
 | `NotificationIcons.ts` | Notification bell |
 | `StatusIndicatorIcons.ts` | Verified, warning, error, info, check |
 | `WorkbenchActionIcons.ts` | Toolbar and editor actions |
+| `DebugToolbarIcons.ts` | Debug toolbar and run buttons |
+| `PanelIcons.ts` | Panel tabs, terminal, and panel buttons |
+| `SourceControlIcons.ts` | Source Control and Git actions |
 
 Each file maps a VS Code icon ID to a Hugeicons icon:
 
@@ -140,14 +137,15 @@ To override an icon that is not listed yet, add its ID to the matching type in `
 5. Names the font after a hash of its contents, so VS Code never shows an old cached version.
 6. Writes `plume-product-icon-theme.json`, which points each icon ID at its glyph.
 
-Build settings live in `src/BuildConfig.ts`.
+Build settings live in `src/BuildConfig.ts`. `bun run install:vscode` runs the same build, then packs and installs the extension.
 
 ## Project structure
 
 ```
 src/
 ├── index.ts          Build entry point
-├── BuildConfig.ts    Font, output, SVG, and Inkscape settings
+├── install.ts        Install entry point
+├── BuildConfig.ts    Font, output, SVG, Inkscape, and install settings
 ├── actions/          One build step per file
 ├── icons/            VS Code icon ID to Hugeicons mappings
 ├── support/          Small shared helpers
