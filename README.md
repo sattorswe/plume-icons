@@ -6,6 +6,14 @@ Plume replaces the icons in the VS Code interface itself: the activity bar, tool
 
 This extension is not published to the VS Code Marketplace. You build it from this repository and install it on your own machine.
 
+## Screenshots
+
+The activity bar on the left, the Explorer toolbar, and the close button in the editor header all use Plume Icons. The colors come from the matching [Plume Themes](https://github.com/sattorswe/plume-themes).
+
+| Light | Dark |
+| --- | --- |
+| ![Plume Icons with a light theme](docs/screenshots/light-explorer.png) | ![Plume Icons with a dark theme](docs/screenshots/dark-explorer.png) |
+
 ## What it changes
 
 | Area | Icons |
