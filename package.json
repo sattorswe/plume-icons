@@ -28,7 +28,7 @@
   "scripts": {
     "build": "bun src/index.ts",
     "typecheck": "tsc",
-    "package": "bun run build && vsce package --no-dependencies --allow-missing-repository --skip-license"
+    "install:vscode": "bun src/install.ts"
   },
   "devDependencies": {
     "@hugeicons/core-free-icons": "^4.3.5",
