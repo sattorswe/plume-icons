@@ -10,7 +10,7 @@ export const buildConfig = {
   extension: {
     name: "plume-icons",
     ext: ".vsix",
-    package: ["vsce", "package", "--no-dependencies", "--allow-missing-repository", "--skip-license", "--out"],
+    package: ["vsce", "package", "--no-dependencies", "--out"],
     install: ["code", "--force", "--install-extension"],
   },
   inkscape: { command: ["inkscape", "--actions", "select-all:all;object-stroke-to-path;export-plain-svg;export-overwrite;export-do"] },
