@@ -4,6 +4,10 @@
   "description": "Plume product icon theme for VS Code",
   "version": "0.0.1",
   "publisher": "plume",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sattorswe/plume-icons"
+  },
   "private": true,
   "type": "module",
   "engines": {
