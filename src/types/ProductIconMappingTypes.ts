@@ -98,11 +98,69 @@ export type WorkbenchActionIconId =
   | "git-branch-compact"
   | "split-horizontal";
 
+export type DebugToolbarIconId =
+  | "debug-start"
+  | "debug-alt"
+  | "debug-run"
+  | "debug-continue"
+  | "debug-pause"
+  | "debug-stop"
+  | "debug-disconnect"
+  | "debug-restart"
+  | "debug-step-over"
+  | "debug-step-into"
+  | "debug-step-out"
+  | "debug-step-back"
+  | "debug-reverse-continue"
+  | "debug-configure"
+  | "run"
+  | "play";
+
+export type PanelIconId =
+  | "terminal"
+  | "terminal-view-icon"
+  | "terminal-new"
+  | "terminal-kill"
+  | "terminal-rename"
+  | "terminal-configure-profile"
+  | "output-view-icon"
+  | "markers-view-icon"
+  | "debug-console-view-icon"
+  | "ports-view-icon"
+  | "panel-maximize"
+  | "panel-close"
+  | "screen-full"
+  | "screen-normal";
+
+export type SourceControlIconId =
+  | "discard"
+  | "remove"
+  | "go-to-file"
+  | "git-commit"
+  | "git-fetch"
+  | "repo-push"
+  | "repo-pull"
+  | "repo-sync"
+  | "sync"
+  | "cloud-upload"
+  | "cloud-download"
+  | "git-stash"
+  | "git-stash-apply"
+  | "git-stash-pop"
+  | "git-pull-request"
+  | "diff-multiple"
+  | "compare-changes"
+  | "list-tree"
+  | "list-flat";
+
 export type ProductIconId =
   | ActivityBarIconId
   | NavigationArrowIconId
   | NotificationIconId
   | StatusIndicatorIconId
-  | WorkbenchActionIconId;
+  | WorkbenchActionIconId
+  | DebugToolbarIconId
+  | PanelIconId
+  | SourceControlIconId;
 
 export type ProductIconMap<Id extends ProductIconId = ProductIconId> = Readonly<Record<Id, HugeIcon>>;
