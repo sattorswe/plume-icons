@@ -9,6 +9,7 @@
     "url": "https://github.com/sattorswe/plume-icons"
   },
   "private": true,
+  "packageManager": "bun@1.4.2",
   "type": "module",
   "engines": {
     "vscode": "^1.139.0"
@@ -28,6 +29,7 @@
   "scripts": {
     "build": "bun src/index.ts",
     "typecheck": "tsc",
+    "package": "bun src/package.ts",
     "install:vscode": "bun src/install.ts"
   },
   "devDependencies": {
