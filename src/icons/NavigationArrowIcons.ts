@@ -1,0 +1,38 @@
+import {
+  ArrowDown01Icon,
+  ArrowDown02Icon,
+  ArrowLeft01Icon,
+  ArrowLeft02Icon,
+  ArrowRight01Icon,
+  ArrowRight02Icon,
+  ArrowUp01Icon,
+  ArrowUp02Icon,
+  CircleArrowDown02Icon,
+  CircleArrowLeft02Icon,
+  CircleArrowRight02Icon,
+  CircleArrowUp02Icon,
+} from "@hugeicons/core-free-icons";
+import type { NavigationArrowIconId, ProductIconMap } from "@/types/ProductIconMappingTypes.ts";
+
+export const navigationArrowIcons: ProductIconMap<NavigationArrowIconId> = {
+  "chevron-right": ArrowRight01Icon,
+  "chevron-left": ArrowLeft01Icon,
+  "chevron-up": ArrowUp01Icon,
+  "chevron-down": ArrowDown01Icon,
+  "chevron-right-compact": ArrowRight01Icon,
+  "chevron-left-compact": ArrowLeft01Icon,
+  "chevron-up-compact": ArrowUp01Icon,
+  "chevron-down-compact": ArrowDown01Icon,
+  "arrow-right": ArrowRight02Icon,
+  "arrow-left": ArrowLeft02Icon,
+  "arrow-up": ArrowUp02Icon,
+  "arrow-down": ArrowDown02Icon,
+  "arrow-small-right": ArrowRight02Icon,
+  "arrow-small-left": ArrowLeft02Icon,
+  "arrow-small-up": ArrowUp02Icon,
+  "arrow-small-down": ArrowDown02Icon,
+  "arrow-circle-right": CircleArrowRight02Icon,
+  "arrow-circle-left": CircleArrowLeft02Icon,
+  "arrow-circle-up": CircleArrowUp02Icon,
+  "arrow-circle-down": CircleArrowDown02Icon,
+};
