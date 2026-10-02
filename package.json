@@ -2,9 +2,10 @@
   "name": "plume-icons",
   "displayName": "Plume Icons",
   "description": "Plume product icon theme for VS Code",
-  "version": "0.0.2",
+  "version": "0.0.1-beta",
   "publisher": "plume",
   "license": "MIT",
+  "icon": "assets/plume-icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/sattorswe/plume-icons"
